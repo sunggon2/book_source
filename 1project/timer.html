@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>향상된 타이머</title>
+    <link rel="stylesheet" href="timer.css">
+</head>
+<body>
+    <div class="timer-container">
+        <h1>타이머 설정</h1>
+        <label>분: <input type="number" id="minuteInput" placeholder="0" min="0" /></label>
+         <label>초: <input type="number" id="secondInput" placeholder="0" min="0" /></label>
+        <br>
+        <button class="start-btn">타이머 시작</button>
+        <button class="pause-btn">일시 정지</button>
+        <button class="resume-btn">재시작</button>
+        <button class="reset-btn">리셋</button>
+        <div id="timerDisplay">남은 시간: 00:00</div>
+    </div>
+    <audio id="endSound" src="finish.mp3"></audio>
+
+    <script src="timer.js"></script>
+</body>
+</html>

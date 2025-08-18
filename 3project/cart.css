@@ -1,0 +1,119 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+h1 {
+  color: #444;
+  margin-bottom: 40px;
+}
+
+/* 상품 리스트 */
+#product-list {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.product {
+  background-color: #fff;
+  padding: 20px;
+  width: 220px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+.product:hover {
+  transform: translateY(-5px);
+}
+.product img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+.product span {
+  display: block;
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+.add-to-cart {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.add-to-cart:hover {
+  background-color: #0056b3;
+}
+
+/* 장바구니 */
+.cart {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.cart h2 {
+  margin-bottom: 20px;
+}
+
+/* 구조화된 장바구니 아이템 */
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+  gap: 10px;
+}
+.cart-item > div {
+  flex: 1;
+  text-align: center;
+}
+.item-name {
+  flex: 2;
+  text-align: left;
+}
+.item-qty input {
+  width: 60px;
+  padding: 6px;
+  text-align: center;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+.remove-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.2s;
+}
+.remove-btn:hover {
+  background-color: #c82333;
+  transform: scale(1.05);
+}
+.remove-btn:active {
+  transform: scale(0.98);
+}
+strong {
+  display: block;
+  text-align: right;
+  font-size: 20px;
+  margin-top: 10px;
+}
