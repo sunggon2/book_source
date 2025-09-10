@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Image Visibility with Slide Effect (Vanilla JS)</title>
+    <style>
+        #toggleButton {
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        #image {
+            max-width: 300px;
+            height: auto;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            display: block;
+            max-height: 500px; /* 이미지 높이보다 크게 설정 */
+            opacity: 1;
+        }
+
+        #image.hidden {
+            max-height: 0;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Toggle Image Visibility with Slide Effect</h2>
+    <img id="image" src="https://dummyimage.com/300x300/000/fff" alt="Sample Image">
+    <br>
+    <button id="toggleButton">Hide Image</button>
+
+    <script>
+        const button = document.getElementById('toggleButton');
+        const image = document.getElementById('image');
+
+        button.addEventListener('click', () => {
+            image.classList.toggle('hidden'); // hidden 클래스 토글
+            if (button.textContent === 'Hide Image') {
+                button.textContent = 'Show Image';
+            } else {
+                button.textContent = 'Hide Image';
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!-- jQuery
+    <style>
+        #toggleButton {
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 300px;
+            height: auto;
+        }
+    </style>
+
+    <script>
+        // jQuery로 버튼 클릭 이벤트 설정
+        $('#toggleButton').click(function () {
+            $('#image').slideToggle(500); // 0.5초 동안 이미지 슬라이드 인/아웃
+            if ($(this).text() === 'Hide Image') {
+                $(this).text('Show Image');
+            } else {
+                $(this).text('Hide Image');
+            }
+        });
+    </script> -->

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        ul {
+            margin-top: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+            padding: 10px;
+            background-color: #f2f2f2;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic List Management with User Input</h1>
+    <button id="addItemButton">Add Item</button>
+    <button id="removeItemButton">Remove Item</button>
+
+    <ul id="todoList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <script>
+        const addItemButton = document.getElementById('addItemButton');
+        const removeItemButton = document.getElementById('removeItemButton');
+        const todoList = document.getElementById('todoList');
+
+        // "Add Item" 버튼 클릭 시 리스트에 항목 추가
+        addItemButton.addEventListener('click', () => {
+            const userInput = window.prompt('Enter a new task to add to the list:'); 
+                           // 사용자 입력 받기 (BOM의 prompt)
+            if (userInput) {
+                const newItem = document.createElement('li'); 
+                                 // 새로운 <li> 요소 생성
+                newItem.textContent = userInput;
+                todoList.appendChild(newItem); // 새로운 리스트 항목을 <ul>에 추가
+            }
+        });
+
+        // "Remove Item" 버튼 클릭 시 리스트 항목 삭제
+        removeItemButton.addEventListener('click', () => {
+            const totalItems = todoList.children.length; 
+                              // 현재 리스트의 항목 수
+            if (totalItems === 0) {
+                alert('There are no items to remove!'); // 항목이 없으면 알림 메시지
+                return;
+            }
+
+            const itemIndex = window.prompt(`Enter the number (1 to ${totalItems}) of the item to remove:`);
+            
+            if (itemIndex && !isNaN(itemIndex)) { // 숫자 값인지 확인
+                const index = parseInt(itemIndex) - 1; 
+                              // 입력받은 값은 1부터 시작하므로 -1
+                if (index >= 0 && index < totalItems) {
+                    const confirmation = window.confirm(`Are you sure you want to remove item ${itemIndex}?`);
+                    if (confirmation) {
+                        todoList.removeChild(todoList.children[index]); 
+                        // 입력받은 인덱스의 항목 삭제
+                        alert(`Item ${itemIndex} has been removed.`);
+                    }
+                } else {
+                    alert('Invalid item number!'); // 유효하지 않은 번호 입력 시
+                }
+            } else {
+                alert('Please enter a valid number.'); // 숫자가 아닌 값 입력 시
+            }
+        });
+    </script>
+</body>
+</html>
