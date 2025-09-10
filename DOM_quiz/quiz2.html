@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Image Visibility with Slide Effect (Vanilla JS)</title>
+    <style>
+        #toggleButton {
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        #image {
+            max-width: 300px;
+            height: auto;
+            overflow: hidden;
+            transition: max-height 0.5s ease, opacity 0.5s ease;
+            display: block;
+            max-height: 500px; /* 이미지 높이보다 크게 설정 */
+            opacity: 1;
+        }
+
+        #image.hidden {
+            max-height: 0;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <h2>Toggle Image Visibility with Slide Effect</h2>
+    <img id="image" src="https://dummyimage.com/300x300/000/fff" alt="Sample Image">
+    <br>
+    <button id="toggleButton">Hide Image</button>
+
+    <script>
+        // 버튼 클릭 : hidden 클래스를 붙였다 뗐다 하면서 슬라이드 인/아웃.
+        // 버튼 텍스트 : "Hide Image" ↔ "Show Image"로 전환.
+
+        
+    </script>
+</body>
+</html>
