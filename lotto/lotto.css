@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: 'CookieRun-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/CookieRun-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+*{ 
+  font-family: 'CookieRun-Regular';
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 32px;
+}
+
+body{
+  margin: 0;
+}
+
+.container{
+  width: 350px;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.lotto{
+  text-align: center;
+}
+
+.numbers{
+  width: 350px;
+  height: 60px;
+  border: 1px solid black;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.eachnum{
+  font-size: 0.75em;
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  color: white;
+  background-color: red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  font-size: 0.5em;
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  background-color: salmon;
+  cursor: pointer;
+  transition: all 0.2s ease;   /* hover/active 변화를 부드럽게 */
+}
+
+/* 마우스를 올렸을 때 (hover) */
+button:hover {
+  background-color: tomato;    /* 색상 조금 진하게 */
+  transform: scale(1.05);      /* 살짝 커짐 */
+}
+
+/* 실제로 클릭 눌렀을 때 (active) */
+button:active {
+  transform: scale(0.95);      /* 눌린 듯 살짝 작아짐 */
+}

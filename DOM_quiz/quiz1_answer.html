@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toggle Image Visibility</title>
+    <style>
+        #toggleButton {
+            padding: 10px 20px;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+
+        img {
+            max-width: 300px;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h2>Toggle Image Visibility</h2>
+    <img id="image" src="https://dummyimage.com/300x300/000/fff" alt="Sample Image">
+    <br>
+    <button id="toggleButton">Hide Image</button>
+
+    <script>
+        // 버튼과 이미지를 JavaScript로 가져오기
+        const button = document.getElementById('toggleButton');
+        const image = document.getElementById('image');
+
+        // 버튼 클릭 이벤트 리스너 추가
+        button.addEventListener('click', () => {
+            if (image.style.display === 'none') {
+                // 이미지가 숨겨져 있으면 다시 보여주기
+                image.style.display = 'block';
+                button.textContent = 'Hide Image';
+            } else {
+                // 이미지가 보이면 숨기기
+                image.style.display = 'none';
+                button.textContent = 'Show Image';
+            }
+        });
+    </script>
+</body>
+</html>
+
+<!-- jQery
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // jQuery로 버튼 클릭 이벤트 설정
+        $('#toggleButton').click(function () {
+            $('#image').toggle(); // 이미지의 표시/숨기기 토글
+            $(this).text(function () {
+                return $('#image').is(':visible') ? 'Hide Image' : 'Show Image';
+            });
+        });
+    </script> -->
